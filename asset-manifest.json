@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/adota-um-amigo/static/css/main.50a330c0.css",
-    "main.js": "/adota-um-amigo/static/js/main.104037a4.js",
+    "main.css": "/adota-um-amigo/static/css/main.4e804307.css",
+    "main.js": "/adota-um-amigo/static/js/main.5b3a0673.js",
     "static/js/453.4bbbbb91.chunk.js": "/adota-um-amigo/static/js/453.4bbbbb91.chunk.js",
     "index.html": "/adota-um-amigo/index.html",
-    "main.50a330c0.css.map": "/adota-um-amigo/static/css/main.50a330c0.css.map",
-    "main.104037a4.js.map": "/adota-um-amigo/static/js/main.104037a4.js.map",
+    "main.4e804307.css.map": "/adota-um-amigo/static/css/main.4e804307.css.map",
+    "main.5b3a0673.js.map": "/adota-um-amigo/static/js/main.5b3a0673.js.map",
     "453.4bbbbb91.chunk.js.map": "/adota-um-amigo/static/js/453.4bbbbb91.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50a330c0.css",
-    "static/js/main.104037a4.js"
+    "static/css/main.4e804307.css",
+    "static/js/main.5b3a0673.js"
   ]
 }
