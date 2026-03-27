@@ -10,7 +10,7 @@ function Detalhe() {
   // Procura o animal pelo id convertido para número
   const animal = animais.find((a) => a.id === Number(id));
 
-  // Vai buscar a imagem à API via hook personalizado (sempre chamado antes de qualquer return)
+  // Hook chamado antes de qualquer return condicional (regra dos hooks)
   const { imagem, carregando } = useImagemAnimal(
     animal?.tipo ?? '',
     animal?.imagem ?? ''
@@ -20,7 +20,7 @@ function Detalhe() {
   if (!animal) {
     return (
       <div className="container detalhe-erro">
-        <p>Animal não encontrado.</p>
+        <p style={{ marginBottom: '16px', color: '#6b7280' }}>Animal não encontrado.</p>
         <button className="botao-voltar" onClick={() => navigate(-1)}>
           ← Voltar
         </button>
@@ -28,10 +28,8 @@ function Detalhe() {
     );
   }
 
-  // Formata a idade com singular/plural correcto
   const idadeFormatada = animal.idade === 1 ? '1 ano' : `${animal.idade} anos`;
 
-  // Alerta de interesse em adoção
   const handleAdotar = () => {
     alert(
       `Obrigado pelo teu interesse em adotar o/a ${animal.nome}! Em breve entraremos em contacto.`
@@ -44,19 +42,15 @@ function Detalhe() {
         ← Voltar
       </button>
 
-      {/* Layout em duas colunas: imagem à esquerda, informação à direita */}
+      {/* Layout em duas colunas */}
       <div className="detalhe-grelha">
 
-        {/* Coluna da imagem — renderização condicional durante o carregamento */}
+        {/* Coluna da imagem (sticky) */}
         <div className="detalhe-imagem-wrapper">
           {carregando ? (
             <div className="detalhe-imagem-skeleton" aria-label="A carregar imagem..." />
           ) : (
-            <img
-              src={imagem}
-              alt={animal.nome}
-              className="detalhe-imagem"
-            />
+            <img src={imagem} alt={animal.nome} className="detalhe-imagem" />
           )}
         </div>
 
@@ -72,11 +66,11 @@ function Detalhe() {
           <ul className="detalhe-lista">
             <li>
               <span className="detalhe-label">Idade</span>
-              <span>{idadeFormatada}</span>
+              <span style={{ fontWeight: '600', color: '#111827' }}>{idadeFormatada}</span>
             </li>
             <li>
               <span className="detalhe-label">Localização</span>
-              <span>📍 {animal.localizacao}</span>
+              <span style={{ fontWeight: '600', color: '#111827' }}>📍 {animal.localizacao}</span>
             </li>
           </ul>
 

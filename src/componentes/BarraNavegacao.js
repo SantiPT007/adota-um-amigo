@@ -2,59 +2,75 @@ import { NavLink } from 'react-router-dom';
 
 // Barra de navegação principal da aplicação
 function BarraNavegacao() {
-  // Estilo base dos links de navegação
-  const estiloLink = {
-    color: '#ffffff',
+  const estiloBase = {
+    color: '#6b7280',
     textDecoration: 'none',
-    fontSize: '1rem',
-    padding: '6px 12px',
-    borderRadius: '6px',
-    transition: 'background 0.2s',
+    fontSize: '0.9rem',
+    fontWeight: '600',
+    padding: '7px 14px',
+    borderRadius: '8px',
+    transition: 'all 0.18s ease',
+    fontFamily: "'Inter', sans-serif",
+    letterSpacing: '0.1px',
   };
 
-  // Estilo aplicado ao link activo (página actual)
   const estiloActivo = {
-    ...estiloLink,
-    background: 'rgba(255, 255, 255, 0.2)',
-    fontWeight: '600',
+    ...estiloBase,
+    background: '#fff3ee',
+    color: '#ff6b35',
   };
 
   return (
     <nav
       style={{
-        background: '#2c3e50',
+        background: 'rgba(255,255,255,0.92)',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '0 32px',
-        height: '60px',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+        height: '64px',
       }}
     >
-      {/* Logótipo e nome da aplicação */}
+      {/* Logótipo */}
       <NavLink
         to="/"
-        style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+        style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}
       >
-        <span style={{ fontSize: '1.5rem' }}>🐾</span>
-        <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '1.2rem' }}>
+        <span
+          style={{
+            background: 'linear-gradient(135deg, #ff6b35, #e55a24)',
+            borderRadius: '10px',
+            width: '34px',
+            height: '34px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.1rem',
+            boxShadow: '0 4px 12px rgba(255,107,53,0.35)',
+            flexShrink: 0,
+          }}
+        >
+          🐾
+        </span>
+        <span
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: '800',
+            fontSize: '1.05rem',
+            color: '#111827',
+            letterSpacing: '-0.3px',
+          }}
+        >
           Adota um Amigo
         </span>
       </NavLink>
 
       {/* Links de navegação */}
-      <div style={{ display: 'flex', gap: '8px' }}>
-        <NavLink
-          to="/"
-          end
-          style={({ isActive }) => (isActive ? estiloActivo : estiloLink)}
-        >
+      <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+        <NavLink to="/" end style={({ isActive }) => (isActive ? estiloActivo : estiloBase)}>
           Início
         </NavLink>
-        <NavLink
-          to="/sobre"
-          style={({ isActive }) => (isActive ? estiloActivo : estiloLink)}
-        >
+        <NavLink to="/sobre" style={({ isActive }) => (isActive ? estiloActivo : estiloBase)}>
           Sobre
         </NavLink>
       </div>
